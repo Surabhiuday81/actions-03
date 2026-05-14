@@ -4,34 +4,36 @@ on:
     push:
 
 jobs:
-    temp-job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Printing the current date and time
-              run: date
-            - name: Printing the current working directory
-              run: pwd
-            - name: Printing the list of files in the current directory
-              run: ls -la
-            - name: Printing the current user
-              run: whoami
-            - name: Printing the current environment variables
-              run: printenv
-            - name: Printing the current Git branch
-              run: git branch
-            - name: Printing the current Git commit hash
-              run: git rev-parse HEAD
-            - name: Printing the current Git status
-              run: git status
-            - name: Printing the current Git log
-              run: git log -1
-            - name: Printing the current Git diff
-              run: git diff
-            - name: Printing the current Git remote
-              run: git remote -v
-            - name: Printing the current Git tags
-              run: git tag
-            - name: Printing the current Git branches
-              run: git branch -a
-            - name: Printing the current Git submodules
-              run: git submodule status
+  temp-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Printing the current date and time
+        run: date
+      - name: Printing the current working directory
+        run: pwd
+      - name: Printing the list of files in the current directory
+        run: ls -la
+      - name: Printing the current user
+        run: whoami
+      - name: Printing the current environment variables
+        run: printenv
+      - name: Printing the current Git branch
+        run: git branch
+      - name: Printing the current Git commit hash
+        run: git rev-parse HEAD
+      - name: Printing the current Git status
+        run: git status
+      - name: Printing the current Git log
+        run: git log -1
+      - name: Printing the current Git diff
+        run: git diff
+      - name: Printing the current Git remote
+        run: git remote -v
+      - name: Printing the current Git tags
+        run: git tag
+      - name: Printing the current Git branches
+        run: git branch -a
+      - name: Printing the current Git submodules
+        run: git submodule status
